@@ -24,7 +24,8 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
+    #runs-on: ubuntu-18.04
     #runs-on: ubuntu-16.04
     if: github.event.repository.owner.id == github.event.sender.id
     
@@ -32,7 +33,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [rpi3_64,rpi4_64,ova,generic_x86_64,generic_aarch64]
+        target: [rpi3_64,rpi4_64,ova,generic_x86_64,generic_aarch64,phicomm_n1]
 
     steps:
     - name: Checkout
